@@ -1,23 +1,39 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <Header/>
+    <!--<button  class="btn btn-default">Button</button>-->
+    <Login/>
+    <Footer/>
     <router-view/>
   </div>
+
+
 </template>
 
 <script>
+import Header from './components/layout/Header'
+import Login from './components/layout/Login'
+import Footer from './components/layout/Footer'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    Header,
+    Login,
+    Footer
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  html, body {
+    height: 100%;
+  }
+
+#app{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
+
+
 </style>

@@ -20,24 +20,29 @@ import java.util.Set;
 public class UserAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     @NotBlank
     @Size(max = 30)
+    @Column(name = "nick_name")
     private String name;
 
     @NotBlank
     @Size(max = 20)
+    @Column(name = "user_name")
     private String userName;
 
     @NaturalId
     @NotBlank
     @Size(max = 40)
     @Email
+    @Column(name = "email")
     private String email;
 
     @NotBlank
     @Size(max = 100)
+    @Column(name = "password")
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
